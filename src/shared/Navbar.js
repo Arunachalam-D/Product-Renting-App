@@ -1,59 +1,131 @@
+import React from "react";
+import {
+  Navbar,
+  MobileNav,
+  Typography,
+  Button,
+  IconButton,
+  
+} from "@material-tailwind/react";
+import { FaSistrix } from "react-icons/fa6";
+import { FaCartShopping } from "react-icons/fa6";
+import Logo from '../assests/Logo3.png'
 
-export default function Navbar(){
-    return(
-        <>
-        <nav
-        className="flex outline-0 items-center justify-between flex-wrap bg-white py-4 lg:px-12 shadow ">
-        <div className="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0">
-            <div className="flex items-center flex-shrink-0 text-gray-800 mr-16">
-                <span className="font-semibold text-xl tracking-tight">My Navbar</span>
-            </div>
-            <div className="block lg:hidden ">
-                <button
-                    id="nav"
-                    className="flex items-center px-3 py-2 border-2 rounded text-blue-700 border-blue-700 hover:text-blue-700 hover:border-blue-700">
-                    <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title>
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
+ 
+export default function NavbarDefault() {
+  const [openNav, setOpenNav] = React.useState(false);
+ 
+  React.useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpenNav(false),
+    );
+  }, []);
+ 
+  const navList = (
+    <ul className="mb-4 mt-2 text-black flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      
+     <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="/" className="hidden lg:block flex justify-center items-center">
+          About
+        </a>
+      </Typography>
+      <div className="flex pr-5 justify-center m-auto w-[fit-content]  md:bg-transparent bg-[#8be2efd1] p-1 px-2 rounded-[10px]">
+      <FaCartShopping className="m-auto mr-1 text-white md:text-[#13a6c7d1]"/>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="/" className="flex items-center  justify-center">
+          Cart
+        </a>
+      </Typography>
+      
+      </div>
+  <div className="relative search m-auto">
+      <input placeholder="search" className="outline-0 placeholder:font-light w-[80vw] md:w-[50vw] p-1 border border-gray-300 rounded-[10px]"/>
+     <span className="absolute icon right-[2vw] text-[#13a6c7d1] top-[1.5vh] md:right-[1vw] md:top-[1.5vh] focus:hidden"><FaSistrix/></span>
+    </div>
+      
+      <select className="border border-gray-200 m-auto w-[80vw] md:w-[fit-content] outline-0 rounded-[10px] p-1.5" >
+    <option  value="Madurai">Madurai</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Coimbatore">Coimbatore</option>
+    <option value="Sivagangai">Sivagangai</option>
+  </select>
+  <Button className="hidden text-black lg:inline-block bg-[#8be2efd1] p-1.5 px-2 rounded-[10px] border border-transparent hover:bg-white hover:border hover:border-[#13a6c7d1] hover:text-[#13a6c7d1] font-light text-sm">
+          <span>Login / Signup</span>
+    </Button>
+   
+    </ul>
     
-        <div className="menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8">
-            <div className="text-md font-bold text-blue-700 lg:flex-grow">
-                <a href="#responsive-header"
-                   className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
-                    Menu 1
-                </a>
-                <a href="#responsive-header"
-                   className=" block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
-                    Menu 2
-                </a>
-                <a href="#responsive-header"
-                   className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2">
-                    Menu 3
-                </a>
-            </div>
+  );
+ 
+  return (
+    <Navbar className="mx-auto fixed top-0 w-screen shadow-lg py-2 px-4 lg:px-8 lg:py-4">
+      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+       
+        <img src={Logo} alt='error' className="h-[50px] w-[50px] rounded-[100%]"/>
+       
+        <div className="hidden lg:block">{navList}</div>
+        
+        
+        <IconButton
+          variant="text"
+          className="ml-auto h-6 w-6 mb-auto text-inherit text-black hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          ripple={false}
+          onClick={() => setOpenNav(!openNav)}
+        >
+          {openNav ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              className="h-6 w-6"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
+        </IconButton>
+      </div>
+      <MobileNav open={openNav}>
+        <div className="container mx-auto">
             
-            <div className="relative mx-auto text-gray-600 lg:block hidden">
-                <input
-                    className="border-2 border-gray-300 bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none"
-                    type="search" name="search" placeholder="Search"/>
-                <button type="submit" className="absolute right-0 top-0 mt-3 mr-max">
-                
-                </button>
-            </div>
-            <div className="flex ">
-                <a href="#"
-                   className="block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0">Sign
-                    in</a>
-    
-                <a href="#"
-                   className=" block text-md px-4  ml-2 py-2 rounded text-blue-700 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0">login</a>
-            </div>
+          {navList}
+          <div className="flex justify-center">
+          <Button  size="sm" fullWidth className="mb-2 text-black bg-[#8be2efd1] p-2 rounded-[10px] border border-transparent hover:bg-white hover:border hover:border-[#13a6c7d1] hover:text-[#13a6c7d1] font-light text-sm">
+            <span>Login / Signup</span>
+          </Button>
+          </div>
         </div>
-    
-    </nav>
-        </>
-    )
+      </MobileNav>
+    </Navbar>
+  );
 }
