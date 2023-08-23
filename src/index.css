@@ -5,3 +5,12 @@
 .search:focus-within .icon{
     visibility: hidden;
 }
+.first{
+    background-image: url('https://img.freepik.com/free-photo/modern-industrial-luxury-style-living-room-interior-with-leather-couch-golden-lamp-houseplants_53876-128128.jpg?w=2000');
+    height:100%;
+   background-size: contain;
+   background-position: center;
+   background-repeat: no-repeat;
+
+   
+}
