@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import './Login.css'
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import {NavLink} from 'react-router-dom'
 const SignupSchema = Yup.object().shape({
   username: Yup.string()
     .min(2, 'Too Short!')
@@ -43,12 +44,12 @@ function LoginSignin() {
 
     <div className='jaswanth'>
         <div className={`container ${isLogIn ? 'log-in' : ''} `}>
-  <div class="box"></div>
-  <div class="container-forms">
-    <div class="container-info">
-      <div class="info-item">
-        <div class="table">
-          <div class="table-cell">
+  <div className="box"></div>
+  <div className="container-forms">
+    <div className="container-info">
+      <div className="info-item">
+        <div className="table">
+          <div className="table-cell">
             <p>
               Have an account?
             </p>
@@ -58,9 +59,9 @@ function LoginSignin() {
           </div>
         </div>
       </div>
-      <div class="info-item">
-        <div class="table">
-          <div class="table-cell">
+      <div className="info-item">
+        <div className="table">
+          <div className="table-cell">
             <p>
               Don't have an account? 
             </p>
@@ -72,7 +73,7 @@ function LoginSignin() {
       </div>
     </div>
     
-    <div class="container-form" >
+    <div className="container-form" >
     <Formik
        initialValues={{
          username: '',
@@ -85,9 +86,9 @@ function LoginSignin() {
        }}
      >
       {({ errors, touched,handleSubmit,values,handleChange }) => (
-      <form class="form-item log-in" onSubmit={handleSubmit}>
-        <div class="table">
-          <div class="table-cell">
+      <form className="form-item log-in" onSubmit={handleSubmit}>
+        <div className="table">
+          <div className="table-cell">
             <input  name='username' placeholder="Username" type="text" value={values.username} onChange={handleChange} className={errors.username && touched.username ? 
                     "border-red-400 border focus:outline-none rounded-lg " : 'border border-gray-700 rounded-lg focus:outline-none'}/>
             {errors.username && touched.username ? (
@@ -106,9 +107,9 @@ function LoginSignin() {
       </form>
       )}
       </Formik>
-      <div class="form-item sign-up">
-        <div class="table">
-          <div class="table-cell">
+      <div className="form-item sign-up">
+        <div className="table">
+          <div className="table-cell">
             <input className='border border-gray-700 rounded-lg focus:outline-none' name="email" placeholder="Email" type="text"  />
             <input className='border border-gray-700 rounded-lg focus:outline-none' name="contactno" placeholder="Contact No" type="text"  />
             <input className='border border-gray-700 rounded-lg focus:outline-none' name="username" placeholder="Username" type="text"  />

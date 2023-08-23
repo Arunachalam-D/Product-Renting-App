@@ -10,6 +10,7 @@ import {
 import { FaSistrix } from "react-icons/fa6";
 import { FaCartShopping } from "react-icons/fa6";
 import Logo from '../assests/Logo3.png'
+import {NavLink} from 'react-router-dom';
 
  
 export default function NavbarDefault() {
@@ -61,7 +62,7 @@ export default function NavbarDefault() {
     <option value="Sivagangai">Sivagangai</option>
   </select>
   <Button className="hidden text-black lg:inline-block bg-[#8be2efd1] p-1.5 px-2 rounded-[10px] border border-transparent hover:bg-white hover:border hover:border-[#13a6c7d1] hover:text-[#13a6c7d1] font-light text-sm">
-          <span>Login / Signup</span>
+          <NavLink to='/login'>Login / Signup</NavLink>
     </Button>
    
     </ul>
@@ -70,7 +71,7 @@ export default function NavbarDefault() {
  
   return (
     <Navbar className="mx-auto z-[100] bg-white fixed top-0 w-screen shadow-lg py-2 px-4 lg:px-8 lg:py-4">
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+      <div className="mx-auto flex items-center justify-between text-blue-gray-900">
        
         <img src={Logo} alt='error' className="h-[50px] w-[50px] rounded-[100%]"/>
        
@@ -116,11 +117,11 @@ export default function NavbarDefault() {
         </IconButton>
       </div>
       <MobileNav open={openNav}>
-        <div className="container mx-auto">
+        <div className="mx-auto">
             
           {navList}
           <div className="flex justify-center">
-          <Button  size="sm" fullWidth className="mb-2 text-black bg-[#8be2efd1] p-2 rounded-[10px] border border-transparent hover:bg-white hover:border hover:border-[#13a6c7d1] hover:text-[#13a6c7d1] font-light text-sm">
+          <Button  size="sm" fullWidth className="w-[fit-content] mb-2 text-black bg-[#8be2efd1] p-2 rounded-[10px] border border-transparent hover:bg-white hover:border hover:border-[#13a6c7d1] hover:text-[#13a6c7d1] font-light text-sm">
             <span>Login / Signup</span>
           </Button>
           </div>
