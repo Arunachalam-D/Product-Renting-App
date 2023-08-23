@@ -69,7 +69,7 @@ export default function NavbarDefault() {
   );
  
   return (
-    <Navbar className="mx-auto fixed top-0 w-screen shadow-lg py-2 px-4 lg:px-8 lg:py-4">
+    <Navbar className="mx-auto z-[100] bg-white fixed top-0 w-screen shadow-lg py-2 px-4 lg:px-8 lg:py-4">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
        
         <img src={Logo} alt='error' className="h-[50px] w-[50px] rounded-[100%]"/>
