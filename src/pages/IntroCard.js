@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import Glide from "@glidejs/glide"
+import Navbar from '../shared/Navbar'
 
 export default function IntroCard() {
   useEffect(() => {
@@ -32,6 +33,7 @@ export default function IntroCard() {
 
   return (
     <>
+    <Navbar />
       {/*<!-- Component: Carousel with controls outside --> */}
       <div className="glide-04 relative w-[80vw] mt-[20vh] m-auto">
         {/*    <!-- Slides --> */}
