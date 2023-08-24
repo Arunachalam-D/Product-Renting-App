@@ -7,7 +7,7 @@
 }
 .first{
     /* background-image: url('./assests/sofa3.jpeg'); */
-    background-color: rgb(141, 35, 0);
+    background-color: rgb(159, 45, 45);
     height:100%;
     border-radius: 20px;
    background-size: contain;
@@ -16,3 +16,9 @@
 
    
 }
+.Img{
+    width: 600px;
+    aspect-ratio: auto 600 / 400;
+    height: 400px;
+}
+
