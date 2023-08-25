@@ -1,12 +1,12 @@
 import React, { useEffect } from "react"
 import Glide from "@glidejs/glide"
-import Iphone from '../assests/Iphone.png'
-import Lambo from '../assests/Lambo2.png'
-import Furniture from '../assests/furniture.png'
-import Plants from '../assests/Plants1.jpeg'
-import Bike from '../assests/Bike1.avif'
-import Hurry from "../assests/Hurry.png"
-import Layout from "../Layout/Layout"
+import Iphone from '../../assests/Iphone.png'
+import Lambo from '../../assests/Lambo2.png'
+import Furniture from '../../assests/furniture.png'
+import Plants from '../../assests/Plants1.jpeg'
+import Bike from '../../assests/Bike1.avif'
+import Hurry from "../../assests/Hurry.png"
+
 
 
 export default function CarouselControlsOutside() {
@@ -40,7 +40,8 @@ export default function CarouselControlsOutside() {
 
   return (
     <>
-   <Layout>      {/*<!-- Component: Carousel with controls outside --> */}
+    
+    {/*<!-- Component: Carousel with controls outside --> */}
       <div className="glide-04 relative mt-[20vh] w-[85vw] m-auto rounded-[20px] shadow-2xl">
         {/*    <!-- Slides --> */}
         <div className="overflow-hidden" data-glide-el="track">
@@ -134,7 +135,7 @@ export default function CarouselControlsOutside() {
         </div>
       </div>
       {/*<!-- End Carousel with controls outside --> */}
-      </Layout>
+     
 
     </>
   )
