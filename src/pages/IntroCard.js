@@ -41,7 +41,7 @@ export default function CarouselControlsOutside() {
   return (
     <>
    <Layout>      {/*<!-- Component: Carousel with controls outside --> */}
-      <div className="glide-04 relative w-full mt-[20vh] w-[85%] m-auto rounded-[20px] shadow-2xl">
+      <div className="glide-04 relative mt-[20vh] w-[85vw] m-auto rounded-[20px] shadow-2xl">
         {/*    <!-- Slides --> */}
         <div className="overflow-hidden" data-glide-el="track">
           <ul className="whitespace-no-wrap  flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
