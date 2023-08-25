@@ -6,6 +6,7 @@ import {GiSofa} from 'react-icons/gi'
 import {PiPackageFill} from 'react-icons/pi'
 import {FiMonitor} from 'react-icons/fi'
 import {IoHeadsetSharp} from 'react-icons/io5'
+import { NavLink } from 'react-router-dom'
 
 
 function index() {
@@ -15,7 +16,7 @@ function index() {
         <div><Category name="Packages"  icon={<PiPackageFill/>}/></div>
         <div><Category name="Electonics"  icon={<IoHeadsetSharp/>}/></div>
         <div><Category name="Appliances"  icon={<FiMonitor/>}/></div>
-        <div><Category name="Furniture"  icon={<GiSofa/>}/></div>
+        <NavLink to='/furniture'> <div><Category name="Furniture"  icon={<GiSofa/>}/></div></NavLink>
         <div><Category name="Two-Wheeler" icon={<MdOutlineDirectionsBike/>}/></div>
         <div><Category name="Fitness" icon={<IoIosFitness/>}/></div>
     </div>
