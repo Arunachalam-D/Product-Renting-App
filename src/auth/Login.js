@@ -38,7 +38,7 @@ function LoginSignin() {
   return (
 
     <div className='jaswanth'>
-    <div className="container lg:py-[2.5%] m-auto">
+    <div className="container lg:py-[2.5%] xl:py-0 m-auto">
     <section id="formHolder">
  
        <div className=" row sm:grid-cols-2 grid grid-cols-1 ">
@@ -96,7 +96,7 @@ function LoginSignin() {
                    </div>
  
                    <div className="CTA">
-                      <input type="submit" value="Login"/>
+                      <input className="cursor-pointer" type="submit" value="Login"/>
                       <a href="#" className={`switch ${isActive ? 'active' : ''}`} onClick={handleInfoItemClick} >I'm New</a>
                    </div>
                 </form>
@@ -125,9 +125,11 @@ function LoginSignin() {
  
                    <div className={`form-group ${errors.name && touched.name ? 
                     "hasError" : ''}`}>
-                      <label htmlFor="name">Full Name - <small>Optional</small></label>
+                      <label htmlFor="name">Full Name</label>
                       <input type="text" name="name" id="name" className="name" value={values.name} onChange={handleChange}/>
-                      <span className="error"></span>
+                      {errors.name && touched.name ? (
+             <span className='text-[#f95959] text-xs'>{errors.name}</span>
+           ) : null}
                    </div>
  
                    <div className={`form-group ${errors.email && touched.email ? 
@@ -135,26 +137,33 @@ function LoginSignin() {
                       <label htmlFor="email">Email Adderss</label>
                       <input type="email" name="email" id="email" className="email"
                       value={values.email} onChange={handleChange}/>
-                      <span className="error"></span>
+                     {errors.email && touched.email ? (
+             <span className='text-[#f95959] text-xs'>{errors.email}</span>
+           ) : null}
                    </div>
  
                    <div className={`form-group ${errors.phone && touched.phone ? 
                     "hasError" : ''}`}>
                       <label htmlFor="phone">Phone Number </label>
                       <input type="text" name="phone" id="phone" value={values.phone} onChange={handleChange}/>
+                      {errors.phone && touched.phone ? (
+             <span className='text-[#f95959] text-xs'>{errors.phone}</span>
+           ) : null}
                    </div>
  
                    <div className={`form-group ${errors.password && touched.password ? 
                     "hasError" : ''}`}>
                       <label htmlFor="password">Password</label>
                       <input type="password" name="password" id="password" className="pass" value={values.password} onChange={handleChange}/>
-                      <span className="error"></span>
+                      {errors.password && touched.password ? (
+             <span className='text-[#f95959] text-xs'>{errors.password}</span>
+           ) : null}
                    </div>
  
                   
  
                    <div className="CTA">
-                      <input type="submit" value="Signup Now" id="submit"/>
+                      <input className="cursor-pointer" type="submit" value="Signup Now" id="submit"/>
                       <a href="#" className={`switch ${isActive ? 'active' : ''}`} onClick={handleInfoItemClick}>I have an account</a>
                    </div>
                 </form>
