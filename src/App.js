@@ -1,17 +1,22 @@
 import './App.css';
-import LoginSignin from './shared/Login';
-import  Navbar  from './shared/Navbar';
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Login from '../src/auth/Login'
 import IntroCard from './pages/IntroCard';
-import Footer from './shared/Footer';
+import Category from './shared/Category/index';
+import Creators from './pages/Creators';
+
+
 function App() {
   return (
     <div className="App">
-     {/* <Navbar/> */}
-
-      {/* <Footer/> */}
-     <LoginSignin/>
-
-     {/* <IntroCard/> */}
+      <BrowserRouter>   
+        <Routes>
+          <Route path='/' element={<IntroCard/>}/>             
+          <Route path='/login' element={<Login/>}/>       
+        </Routes>
+     </BrowserRouter>
+      <Category />
+      <Creators/>
 
     </div>
   );

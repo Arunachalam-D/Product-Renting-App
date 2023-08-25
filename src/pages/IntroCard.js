@@ -1,13 +1,21 @@
 import React, { useEffect } from "react"
 import Glide from "@glidejs/glide"
+import Iphone from '../assests/Iphone.png'
+import Lambo from '../assests/Lambo2.png'
+import Furniture from '../assests/furniture.png'
+import Plants from '../assests/Plants1.jpeg'
+import Bike from '../assests/Bike1.avif'
+import Hurry from "../assests/Hurry.png"
+import Layout from "../Layout/Layout"
 
-export default function IntroCard() {
+
+export default function CarouselControlsOutside() {
   useEffect(() => {
     const slider = new Glide(".glide-04", {
       type: "carousel",
       focusAt: "center",
-      perView: 1,
-      autoplay: false ,//2000
+      perView: 3,
+      autoplay: 2000,
       animationDuration: 700,
       gap: 24,
       classNames: {
@@ -32,50 +40,53 @@ export default function IntroCard() {
 
   return (
     <>
-      {/*<!-- Component: Carousel with controls outside --> */}
-      <div className="glide-04 relative w-[80vw] mt-[20vh] m-auto">
+   <Layout>      {/*<!-- Component: Carousel with controls outside --> */}
+      <div className="glide-04 relative mt-[20vh] w-[85vw] m-auto rounded-[20px] shadow-2xl">
         {/*    <!-- Slides --> */}
         <div className="overflow-hidden" data-glide-el="track">
-          <ul className="whitespace-no-wrap flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0 h-[50vh]">
-            <li className="first w-[fit-content] m-auto border border-black flex">
-              {/* <img
-                src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-01.jpg"
-                className="m-auto max-h-full w-full max-w-full"
-              /> */}
-              <div className="justify-center m-auto">
-                <h2>Dont't miss the offer</h2>
-                <p>Offer ends soon.</p>
-              </div>
-            </li>
-            <li>
+          <ul className="whitespace-no-wrap  flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full overflow-hidden p-0">
+          <li>
               <img
-                src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-02.jpg"
-                className="m-auto max-h-full w-full max-w-full"
+                src={Hurry}
+                className="Img m-auto max-h-full w-full max-w-full"
               />
             </li>
             <li>
               <img
-                src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-03.jpg"
-                className="m-auto max-h-full w-full max-w-full"
+                src={Iphone}
+                className="Img m-auto max-h-full w-full max-w-full"
               />
             </li>
             <li>
               <img
-                src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-04.jpg"
-                className="m-auto max-h-full w-full max-w-full"
+                src={Furniture}
+                className="Img m-auto max-h-full w-full max-w-full"
+              />
+            </li>
+           
+            <li>
+              <img
+                src={Lambo}
+                className="Img m-auto max-h-full w-full max-w-full"
               />
             </li>
             <li>
               <img
-                src="https://Tailwindmix.b-cdn.net/carousel/carousel-image-05.jpg"
-                className="m-auto max-h-full w-full max-w-full"
+                src={Plants}
+                className="Img m-auto max-h-full w-full max-w-full"
+              />
+            </li>
+            <li>
+              <img
+                src={Bike}
+                className="Img m-auto max-h-full w-full max-w-full"
               />
             </li>
           </ul>
         </div>
         {/*    <!-- Controls --> */}
         <div
-          className="flex w-full items-center justify-center gap-2 p-4 "
+          className="flex w-full items-center justify-center gap-2 p-4"
           data-glide-el="controls"
         >
           <button
@@ -123,6 +134,8 @@ export default function IntroCard() {
         </div>
       </div>
       {/*<!-- End Carousel with controls outside --> */}
+      </Layout>
+
     </>
   )
 }
