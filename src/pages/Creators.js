@@ -5,7 +5,10 @@ import Jaswanth from '../assests/Man2.png'
 export default function Creators() {
   return (
     <div className="bg-black">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-[10vh]">      
+      <div>
+        <h1 className="text-white  text-left ml-10 pt-10">From the Creators</h1>
+      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-[10vh]">      
     {/*<!-- Arun--> */}
       <div className="flex  w-[80vw] md:w-[40vw] py-[5vh] m-auto flex-col overflow-hidden bg-white rounded shadow-xl text-slate-500 sm:flex-row">
     
