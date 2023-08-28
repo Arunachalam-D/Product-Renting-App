@@ -7,7 +7,7 @@ import { PiPlantFill } from "react-icons/pi";
 
 function index() {
   return (
-    <div className='py-4 bg-[whitesmoke]'>
+    <div className='py-20 bg-[whitesmoke]'>
         <div className='w-[85vw] m-auto'>
              <h1 className='text-red-400 capitalize text-xl text-left mt-8 font-normal'>What's there in <span className='font-bold'>Rent-It...</span></h1>
         </div>

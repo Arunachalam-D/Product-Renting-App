@@ -97,7 +97,7 @@ function LoginSignin() {
  
                    <div className="CTA">
                       <input className="cursor-pointer" type="submit" value="Login"/>
-                      <a href="#" className={`switch ${isActive ? 'active' : ''}`} onClick={handleInfoItemClick} >I'm New</a>
+                      <span className={`switch  underline underline-offset-2 text-gray-400 hover:text-red-400 cursor-pointer ${isActive ? 'active' : ''}`} onClick={handleInfoItemClick} >I'm New</span>
                    </div>
                 </form>
                 )}
@@ -164,7 +164,7 @@ function LoginSignin() {
  
                    <div className="CTA">
                       <input className="cursor-pointer" type="submit" value="Signup Now" id="submit"/>
-                      <a href="#" className={`switch ${isActive ? 'active' : ''}`} onClick={handleInfoItemClick}>I have an account</a>
+                      <span className={`switch underline underline-offset-2 text-gray-400 hover:text-red-400 cursor-pointer ${isActive ? 'active' : ''}`} onClick={handleInfoItemClick}>I have an account</span>
                    </div>
                 </form>
                 )}
