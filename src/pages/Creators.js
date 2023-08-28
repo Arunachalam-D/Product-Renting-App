@@ -5,12 +5,12 @@ import Jaswanth from '../assests/Man2.png'
 export default function Creators() {
   return (
     <div className="bg-black">
-      <div>
-        <h1 className="text-white  text-left ml-10 pt-10">From the Creators</h1>
+      <div className="text-white w-[85vw] m-auto ">
+        <h1 className="text-left pt-10 pb-0">From the Creators</h1>
       </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-[10vh]">      
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-[10vh] w-[85vw] m-auto">      
     {/*<!-- Arun--> */}
-      <div className="flex  w-[80vw] md:w-[40vw] py-[5vh] m-auto flex-col overflow-hidden bg-white rounded shadow-xl text-slate-500 sm:flex-row">
+      <div className="flex  md:w-[40vw] py-[5vh] m-auto flex-col overflow-hidden bg-white rounded shadow-xl text-slate-500 sm:flex-row">
     
         <div className="flex-1 p-6 sm:mx-6 sm:px-0">
           <header className="flex gap-4 mb-4">
@@ -41,7 +41,7 @@ export default function Creators() {
         </div>
       </div>
 
-      <div className="flex w-[80vw] md:w-[40vw] py-[5vh] m-auto flex-col overflow-hidden bg-white rounded shadow-xl text-slate-500  sm:flex-row">
+      <div className="flex md:w-[40vw] py-[5vh] m-auto flex-col overflow-hidden bg-white rounded shadow-xl text-slate-500  sm:flex-row">
     
         <div className="flex-1 p-6 sm:mx-6 sm:px-0">
           <header className="flex gap-4 mb-4">
