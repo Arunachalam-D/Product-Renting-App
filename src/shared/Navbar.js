@@ -61,9 +61,9 @@ export default function NavbarDefault() {
     <option value="Coimbatore">Coimbatore</option>
     <option value="Sivagangai">Sivagangai</option>
   </select>
-  <Button className="hidden text-black lg:inline-block bg-[#8be2efd1] p-1.5 px-2 rounded-[10px] border border-transparent hover:bg-white hover:border hover:border-[#13a6c7d1] hover:text-[#13a6c7d1] font-light text-sm">
-          <NavLink to='/login'>Login / Signup</NavLink>
-    </Button>
+  <NavLink to='/login' ><Button className="hidden text-black lg:inline-block bg-[#8be2efd1] p-1.5 px-2 rounded-[10px] border border-transparent hover:bg-white hover:border hover:border-[#13a6c7d1] hover:text-[#13a6c7d1] font-light text-sm">
+          Login / Signup
+    </Button></NavLink>
    
     </ul>
     
@@ -121,9 +121,9 @@ export default function NavbarDefault() {
             
           {navList}
           <div className="flex justify-center">
-          <Button  size="sm" fullWidth className="w-[fit-content] mb-2 text-black bg-[#8be2efd1] p-2 rounded-[10px] border border-transparent hover:bg-white hover:border hover:border-[#13a6c7d1] hover:text-[#13a6c7d1] font-light text-sm">
+          <NavLink to='/login' ><Button  size="sm" fullWidth className="w-[fit-content] mb-2 text-black bg-[#8be2efd1] p-2 rounded-[10px] border border-transparent hover:bg-white hover:border hover:border-[#13a6c7d1] hover:text-[#13a6c7d1] font-light text-sm">
             <span>Login / Signup</span>
-          </Button>
+          </Button></NavLink>
           </div>
         </div>
       </MobileNav>

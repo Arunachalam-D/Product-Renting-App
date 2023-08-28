@@ -1,11 +1,9 @@
 import './App.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Login from '../src/auth/Login'
-import IntroCard from './pages/IntroPage/IntroCard';
 import IntroPage from './pages/index'
-import Category from './pages/IntroPage/Category/index';
-import Creators from './pages/Creators';
-import FurnitureType from './shared/FurnitureType';
+import FurnitureType from './shared/FurnitureType/index';
+import FitnessType from './shared/FitnessType/index';
 
 
 function App() {
@@ -16,10 +14,11 @@ function App() {
         <Routes>
           <Route path='/' element={<IntroPage/>}/>             
           <Route path='/login' element={<Login/>}/>
-          <Route path='/furniture' element={<FurnitureType/>} />      
+          <Route path='/furniture' element={<FurnitureType/>} /> 
+          <Route path='/fitness' element={<FitnessType/>} />      
         </Routes>
      </BrowserRouter>
-    
+     
 
     </div>
   );
