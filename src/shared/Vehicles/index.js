@@ -12,7 +12,7 @@ function index() {
   return (
     <div>
          <Layout>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 w-[85vw] m-auto my-[20vh]">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-[85vw] m-auto my-[20vh]">
         <VehicleType Img={Bicycle} type="Bicycle"/>
         <VehicleType Img={Scooter} type="Scooter"/>
         <VehicleType Img={Bike} type="Bike"/>
