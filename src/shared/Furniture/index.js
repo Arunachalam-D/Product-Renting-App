@@ -11,7 +11,7 @@ import Layout from "../../Layout/Layout";
 function index() {
   return (
     <Layout>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 w-[85vw] m-auto my-[20vh] ">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-[85vw] m-auto my-[20vh] ">
         <FurnitureType Img={Baby} type="Baby"/>
         <FurnitureType Img={LivingRoom} type=" Living Area"/>
         <FurnitureType Img={DiningRoom} type="Dining Room"/>
