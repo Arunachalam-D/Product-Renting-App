@@ -14,7 +14,7 @@ function index() {
     // <div className='w-[85vw] m-auto'>
     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 w-[85vw] my-[10vh] m-auto'>
         <div><Category name="Packages"  icon={<PiPackageFill/>}/></div>
-        <div><Category name="Electonics"  icon={<IoHeadsetSharp/>}/></div>
+        <NavLink to='/electronic'><div><Category name="Electronics"  icon={<IoHeadsetSharp/>}/></div></NavLink>
         <div><Category name="Appliances"  icon={<FiMonitor/>}/></div>
         <NavLink to='/furniture'> <div><Category name="Furniture"  icon={<GiSofa/>}/></div></NavLink>
         <div><Category name="Two-Wheeler" icon={<MdOutlineDirectionsBike/>}/></div>
