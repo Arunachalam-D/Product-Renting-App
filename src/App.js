@@ -4,7 +4,12 @@ import Login from '../src/auth/Login'
 import IntroPage from './pages/index'
 import FurnitureType from './shared/FurnitureType/index';
 import FitnessType from './shared/FitnessType/index';
+
 import ElectronicType from './shared/ElectonicsType/index'
+
+import VehicleType from './shared/VehicleType/index';
+
+
 
 function App() {
   return (
@@ -15,8 +20,13 @@ function App() {
           <Route path='/' element={<IntroPage/>}/>             
           <Route path='/login' element={<Login/>}/>
           <Route path='/furniture' element={<FurnitureType/>} /> 
+
           <Route path='/fitness' element={<FitnessType/>} />  
           <Route path='/electronic' element={<ElectronicType/>} />     
+
+         
+          <Route path='/vehicle' element={<VehicleType/>} />      
+
         </Routes>
      </BrowserRouter>
      

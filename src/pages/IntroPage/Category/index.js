@@ -17,7 +17,7 @@ function index() {
         <NavLink to='/electronic'><div><Category name="Electronics"  icon={<IoHeadsetSharp/>}/></div></NavLink>
         <div><Category name="Appliances"  icon={<FiMonitor/>}/></div>
         <NavLink to='/furniture'> <div><Category name="Furniture"  icon={<GiSofa/>}/></div></NavLink>
-        <div><Category name="Two-Wheeler" icon={<MdOutlineDirectionsBike/>}/></div>
+        <NavLink to='/vehicle'><div><Category name="Vehicle" icon={<MdOutlineDirectionsBike/>}/></div></NavLink>
         <NavLink to='/fitness'><div><Category name="Fitness" icon={<IoIosFitness/>}/></div></NavLink>
     </div>
     // </div>
