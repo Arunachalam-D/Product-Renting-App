@@ -2,10 +2,10 @@ import './App.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Login from '../src/auth/Login'
 import IntroPage from './pages/index'
-import FurnitureType from './shared/FurnitureType/index';
-import FitnessType from './shared/FitnessType/index';
-import VehicleType from './shared/VehicleType/index';
-
+import FurnitureType from './shared/Furniture/index';
+import FitnessType from './shared/Fitness/index';
+import VehicleType from './shared/Vehicles/index';
+import Appliances from './shared/Appliances/index'
 
 function App() {
   return (
@@ -17,7 +17,8 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/furniture' element={<FurnitureType/>} /> 
           <Route path='/fitness' element={<FitnessType/>} /> 
-          <Route path='/vehicle' element={<VehicleType/>} />      
+          <Route path='/vehicle' element={<VehicleType/>} />
+          <Route path='/appliances' element={<Appliances/>} />      
         </Routes>
      </BrowserRouter>
      
