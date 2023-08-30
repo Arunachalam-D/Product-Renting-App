@@ -3,6 +3,7 @@ import IntroPage from './IntroPage/index'
 import Creators from './Creators'
 import Layout from '../Layout/Layout'
 import WhyRentit from '../pages/WhyRentit/index'
+import Review from './Review/index'
 
 function Main() {
   return (
@@ -12,6 +13,7 @@ function Main() {
         <div><IntroPage/></div>
         <div><WhyRentit/></div>
         <div><Creators/></div>
+        <div><Review/></div>
        
         </Layout>
     </div>

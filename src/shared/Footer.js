@@ -49,10 +49,10 @@ function Footer() {
              <p> © Designed by Arun & Jaswanth </p>
            </div>
         <div className='gap-4 flex m-auto pb-[4%] md:pb-0 cursor-pointer'>
-        <Icon className='w-[30px] h-[30px] text-white border border-gray-600 rounded-full p-[2%] bg-gray-600' icon="gg:facebook" />
-        <Icon className='w-[30px] h-[30px] text-white border border-gray-600 rounded-full p-[2%] bg-gray-600'  icon="entypo-social:linkedin-with-circle" />
-        <Icon className='w-[30px] h-[30px] text-white border border-gray-600 rounded-full p-[2%] bg-gray-600'  icon="basil:instagram-solid"/>
-        <Icon className='w-[30px] h-[30px] text-white border border-gray-600 rounded-full p-[2%] bg-gray-600' icon="akar-icons:twitter-fill" />
+        <Icon className='w-[30px] h-[30px] text-white border border-gray-600 rounded-full p-[2%] bg-gray-600 hover:scale-150 transition hover:duration-300' icon="gg:facebook" />
+        <Icon className='w-[30px] h-[30px] text-white border border-gray-600 rounded-full p-[2%] bg-gray-600 hover:scale-150 transition hover:duration-300'  icon="entypo-social:linkedin-with-circle" />
+        <Icon className='w-[30px] h-[30px] text-white border border-gray-600 rounded-full p-[2%] bg-gray-600 hover:scale-150 transition hover:duration-300'  icon="basil:instagram-solid"/>
+        <Icon className='w-[30px] h-[30px] text-white border border-gray-600 rounded-full p-[2%] bg-gray-600 hover:scale-150 transition hover:duration-300' icon="akar-icons:twitter-fill" />
         </div>
         
     </div>

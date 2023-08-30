@@ -5,7 +5,7 @@ import Lambo from '../../assests/Lambo2.png'
 import Furniture from '../../assests/furniture.png'
 import Plants from '../../assests/Plants1.jpeg'
 import Bike from '../../assests/Bike1.avif'
-import Hurry from "../../assests/Hurry.png"
+
 
 
 

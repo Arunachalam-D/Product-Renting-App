@@ -1,5 +1,5 @@
 import React from 'react'
-import IntroCard from './IntroCard'
+import IntroCard from '../Cards/Cards'
 import Category from './Category/index'
 
 function IntroPage() {
