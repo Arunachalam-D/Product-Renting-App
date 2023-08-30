@@ -25,19 +25,20 @@ export default function NavbarDefault() {
  
   const navList = (
     <ul className="mb-4 mt-2 text-black flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      
+      <div className="">
      <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="p-1 font-light"
       >
-        <a href="/" className="hidden lg:block flex justify-center items-center">
-          About
-        </a>
+       <NavLink to='/lessor'><a href="/" className="flex w-[fit-content] justify-center  bg-[#8be2efd1] p-1.5 px-2 rounded-[10px] items-center m-auto">
+          Become a Lessor
+        </a></NavLink> 
       </Typography>
-      <div className="flex pr-5 justify-center m-auto w-[fit-content]  md:bg-transparent bg-[#8be2efd1] p-1 px-2 rounded-[10px]">
-      <FaCartShopping className="m-auto mr-1 text-white md:text-[#13a6c7d1]"/>
+      </div>
+      <div className="flex pr-5 justify-center m-auto w-[fit-content]  md:bg-transparent  p-1 px-2 rounded-[10px]">
+      <FaCartShopping className="m-auto mr-1 text-[#13a6c7d1]"/>
       <Typography
         as="li"
         variant="small"
