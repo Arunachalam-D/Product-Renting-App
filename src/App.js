@@ -3,14 +3,12 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Login from '../src/auth/Login'
 import IntroPage from './pages/index'
 
-import FurnitureType from './shared/FurnitureType/index';
-import FitnessType from './shared/FitnessType/index';
+import FurnitureType from './shared/Furniture/index';
+import FitnessType from './shared/Fitness/index';
 
 import ElectronicType from './shared/ElectonicsType/index'
 import Appliances from './shared/Appliances/index'
-import VehicleType from './shared/VehicleType/index';
-
-
+import VehicleType from './shared/Vehicles/index';
 
 
 function App() {
@@ -30,7 +28,7 @@ function App() {
 
         </Routes>
      </BrowserRouter>
-     
+  
 
     </div>
   );

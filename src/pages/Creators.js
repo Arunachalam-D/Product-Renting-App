@@ -4,7 +4,7 @@ import Jaswanth from '../assests/Man2.png'
 
 export default function Creators() {
   return (
-    <div className="bg-black">
+    <div className="bg-gray-900">
       <div className="text-white w-[85vw] m-auto ">
         <h1 className="text-left pt-10 pb-0">From the Creators</h1>
       </div>
@@ -15,7 +15,7 @@ export default function Creators() {
         <div className="flex-1 p-6 sm:mx-6 sm:px-0">
           <header className="flex gap-4 mb-4">
             <a
-              href="#"
+              href="/"
               className="relative inline-flex items-center justify-center w-12 h-12 text-white rounded-full"
             >
               <img
@@ -46,7 +46,7 @@ export default function Creators() {
         <div className="flex-1 p-6 sm:mx-6 sm:px-0">
           <header className="flex gap-4 mb-4">
             <a
-              href="#"
+              href="/"
               className="relative inline-flex items-center justify-center w-12 h-12 text-white rounded-full"
             >
               <img
