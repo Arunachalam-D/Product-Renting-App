@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel,EffectCoverflow,Autoplay,Navigation } from "swiper/modules";
 import Iphone from '../../assests/Iphone.png'
-import Lambo from '../../assests/Lambo2.png'
 import Furniture from '../../assests/furniture.png'
 import Plants from '../../assests/Plants1.jpeg'
 import Bike from '../../assests/Bike1.avif'

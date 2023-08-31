@@ -19,7 +19,8 @@ import Layout from "../../Layout/Layout";
 export default function Example() {
   return (
     <Layout>
-    <form className="w-[fit-content] max-w-[90vw] m-auto">
+      <div className="w-[100vw] border border-black lessor">    
+      <form className="w-[fit-content] max-w-[90vw] bg-white m-auto my-[15vh] p-5 rounded">
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
             <div className="w-[fit-content]  m-auto text-center">
@@ -31,18 +32,18 @@ export default function Example() {
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-4">
               <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
-                Product name
+                Product name / brand
               </label>
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                  <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">workcation.com/</span>
+
                   <input
                     type="text"
                     name="username"
                     id="username"
                     autoComplete="username"
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                    placeholder="janesmith"
+                    placeholder='eg : 32" LED TV /samsung'
                   />
                 </div>
               </div>
@@ -57,7 +58,7 @@ export default function Example() {
                   id="about"
                   name="about"
                   rows={3}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block resize-none w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   defaultValue={''}
                 />
               </div>
@@ -232,7 +233,7 @@ export default function Example() {
       </div>
 
       <div className="mt-6 flex items-center justify-between gap-x-6">
-        <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
+        <button type="button" className="text-sm bg-red-400 px-3 py-1.5 rounded-md text-white font-semibold leading-6 text-gray-900">
           Cancel
         </button>
         <button
@@ -243,6 +244,8 @@ export default function Example() {
         </button>
       </div>
     </form>
+    </div>
+
     </Layout>
   )
 }

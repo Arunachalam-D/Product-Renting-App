@@ -2,7 +2,6 @@ import React,{useState} from 'react'
 import './Login.css'
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import {NavLink} from 'react-router-dom'
 const SignupSchema = Yup.object().shape({
    email: Yup.string().email('Invalid email').required('Email Required'),
   password: Yup.string()
@@ -45,7 +44,7 @@ function LoginSignin() {
  
          
           <div className=" brand">
-             <a href="" className="logo">Nothing <span>.</span></a>
+             <a href="/" className="logo">Nothing <span>.</span></a>
  
              <div className="heading">
                 <h2 className='text-2xl'>RENT-IT</h2>
@@ -54,7 +53,7 @@ function LoginSignin() {
  
              <div className="success-msg">
                 <p>Great! You are one of our members now</p>
-                <a href="#" className="profile">Your Profile</a>
+                <a href="/" className="profile">Your Profile</a>
              </div>
           </div>
  

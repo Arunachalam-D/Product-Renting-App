@@ -32,9 +32,9 @@ export default function NavbarDefault() {
         color="blue-gray"
         className="p-1 font-light"
       >
-       <NavLink to='/lessor'><a href="/" className="flex w-[fit-content] justify-center  bg-[#8be2efd1] p-1.5 px-2 rounded-[10px] items-center m-auto">
+       <NavLink to='/lessor'><p className="flex w-[fit-content] justify-center  bg-[#8be2efd1] p-1.5 px-2 rounded-[10px] items-center m-auto">
           Become a Lessor
-        </a></NavLink> 
+        </p></NavLink> 
       </Typography>
       </div>
       <div className="flex pr-5 justify-center m-auto w-[fit-content]  md:bg-transparent  p-1 px-2 rounded-[10px]">
