@@ -23,7 +23,7 @@ export default function FurnitureType({Img,type}) {
       <CardHeader shadow={false} floated={false}>
         <img
           src={Img}
-          alt="card-image"
+          alt="loading..."
           className="baby h-[40vh] w-full object-cover"
         />
       </CardHeader>
