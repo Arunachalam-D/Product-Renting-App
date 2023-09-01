@@ -25,6 +25,7 @@ function App() {
       
       <BrowserRouter>   
         <Routes>
+          
           <Route path='/' element={<IntroPage/>}/>             
           <Route path='/login' element={<Login/>}/>
           <Route path='/furniture' element={<FurnitureType/>} /> 
@@ -46,7 +47,7 @@ function App() {
           
         </Routes>
      </BrowserRouter>
-  
+      
     
     </div>
   );
