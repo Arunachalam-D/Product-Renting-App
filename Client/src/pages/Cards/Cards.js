@@ -1,30 +1,40 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
-
+import { Mousewheel,EffectCoverflow,Autoplay,Navigation } from "swiper/modules";
+import Iphone from '../../assests/Iphone.png'
+import Furniture from '../../assests/furniture.png'
+import Plants from '../../assests/Plants1.jpeg'
+import Bike from '../../assests/Bike1.avif'
+import Watch from '../../assests/Watch.png'
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "./Cards.css";
 
 const slides = [
-  "https://i.postimg.cc/Z0ktfskN/peter-broomfield-m3m-ln-R90u-M-unsplash.jpg",
-  "https://i.postimg.cc/MTTSXjbn/brandon-atchison-e-BJWhlq-WR54-unsplash.jpg",
-  "https://i.postimg.cc/8cfgmQYD/campbell-3-ZUs-NJhi-Ik-unsplash.jpg",
-  "https://i.postimg.cc/8Ck5BcmS/evgeny-tchebotarev-aiwu-Lj-LPFn-U-unsplash.jpg",
-  "https://i.postimg.cc/66F8J9tr/hakon-sataoen-qyfco1nf-Mtg-unsplash.jpg",
-  "https://i.postimg.cc/ydbzRYvv/joey-banks-YApi-Wyp0lqo-unsplash.jpg",
-  "https://i.postimg.cc/NGKKzyqG/joshua-koblin-eq-W1-MPin-EV4-unsplash.jpg",
+  Iphone,
+  Watch,
+  Furniture,
+  Plants,
+  Bike,
   "https://i.postimg.cc/JhK81QJw/marcus-p-o-UBjd22g-F6w-unsplash.jpg",
 ];
 
 export default function Cards() {
   return (
-    <div className="my-[20px] upper">
+    <div className=" upper">
     <Swiper
-     grabCursor
+    
       centeredSlides
       slidesPerView="auto"
+      loop={true}
+      loopedSlides = {2}
       effect="coverflow"
-      loop
+  
+      autoplay={{
+        delay: 1000,
+        disableOnInteraction: false,
+      }}
+    
+ 
       coverflowEffect={{
         rotate: 50,
         stretch: 0,
@@ -32,7 +42,7 @@ export default function Cards() {
         modifier: 1,
         
       }}
-      modules={[EffectCoverflow]}
+      modules={[Autoplay,Mousewheel,EffectCoverflow,Navigation]}
     >
       <div className="swiper-wrapper">
         {slides.map((slide) => (
