@@ -1,22 +1,15 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-
 import Layout from "../../Layout/Layout";
-
+import { useEffect } from "react";
 
 export default function Example() {
+  useEffect(()=>{
+    window.scrollTo({
+      top:0,
+      left:0,
+    
+    })
+  },[])
+  
   return (
     <Layout>
       <div className="w-[100vw] border border-black lessor">    

@@ -15,9 +15,9 @@ function index() {
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-[85vw] m-auto my-[20vh] ">
        <NavLink to='/smartphones'><ElectronicsType Img={Mobile} type="Smartphones"/> </NavLink>
        <NavLink to='/smartdevices'><ElectronicsType Img={SmartDevice} type="Smart Devices"/></NavLink> 
-        <ElectronicsType Img={Laptop} type="Laptops"/>
-        <ElectronicsType Img={Earphone} type="Charger & earphone"/>
-        <ElectronicsType Img={Tablet} type="Tablets"/>
+       <NavLink to='/laptops'><ElectronicsType Img={Laptop} type="Laptops"/></NavLink> 
+       <NavLink to='/earphoneandcharger'><ElectronicsType Img={Earphone} type="Charger & earphone"/></NavLink>
+       <NavLink to='/tablet'><ElectronicsType Img={Tablet} type="Tablets"/></NavLink>
     </div>
     </Layout>
     </div>

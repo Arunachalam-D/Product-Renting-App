@@ -46,6 +46,7 @@
     box-shadow: 0 0 10px 1000px rgba(0,0,0,0.5);
     outline: none;
     border-radius: 10px;
-    height: 20vh;
+    height: 15vh;
     overflow-y: auto;
 }
+
