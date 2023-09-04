@@ -6,7 +6,6 @@ import * as Yup from 'yup';
 import {NavLink} from 'react-router-dom'
 import axios from 'axios';
 
-
 function LoginSignin() {
   const [isActive, setIsActive] = useState(false);
 
@@ -106,7 +105,7 @@ const formiklogin = useFormik({
  
          
           <div className=" brand">
-             <a href="" className="logo">Nothing <span>.</span></a>
+             <a href="/" className="logo">Nothing <span>.</span></a>
  
              <div className="heading">
                 <h2 className='text-2xl'>RENT-IT</h2>
@@ -115,7 +114,7 @@ const formiklogin = useFormik({
  
              <div className="success-msg">
                 <p>Great! You are one of our members now</p>
-                <a href="#" className="profile">Your Profile</a>
+                <a href="/" className="profile">Your Profile</a>
              </div>
           </div>
  

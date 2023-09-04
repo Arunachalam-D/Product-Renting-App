@@ -7,11 +7,11 @@ import {
   IconButton,
   
 } from "@material-tailwind/react";
-import { FaSistrix } from "react-icons/fa6";
-import { FaCartShopping } from "react-icons/fa6";
+
+
 import Logo from '../assests/Logo3.png'
 import {NavLink} from 'react-router-dom';
-
+import Data from './SearchFilter/index'
  
 export default function NavbarDefault() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -25,37 +25,35 @@ export default function NavbarDefault() {
  
   const navList = (
     <ul className="mb-4 mt-2 text-black flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      
+      <div className="m-auto">
      <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="p-1 font-light"
       >
-        <a href="/" className="hidden lg:block flex justify-center items-center">
-          About
-        </a>
+       <NavLink to='/lessor'><p className=" flex justify-center  bg-[#8be2efd1] p-1.5 px-2 rounded-[10px] items-center m-auto">
+          Become a lessor
+        </p></NavLink> 
       </Typography>
-      <div className="flex pr-5 justify-center m-auto w-[fit-content]  md:bg-transparent bg-[#8be2efd1] p-1 px-2 rounded-[10px]">
-      <FaCartShopping className="m-auto mr-1 text-white md:text-[#13a6c7d1]"/>
+      </div>
+      {/* <div className="flex hidden pr-5 justify-center m-auto w-[fit-content]  md:bg-transparent  p-1 px-2 rounded-[10px]">
+      <FaCartShopping className="m-auto mr-1 text-[#13a6c7d1]"/>
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="p-1  font-normal"
       >
         <a href="/" className="flex items-center  justify-center">
           Cart
         </a>
       </Typography>
       
-      </div>
-  <div className="relative search m-auto">
-      <input placeholder="search" className="outline-0 placeholder:font-light w-[80vw] md:w-[50vw] p-1 border border-gray-300 rounded-[10px]"/>
-     <span className="absolute icon right-[2vw] text-[#13a6c7d1] top-[1.5vh] md:right-[1vw] md:top-[1.5vh] focus:hidden"><FaSistrix/></span>
-    </div>
+      </div> */}
+        <Data/>
       
-      <select className="border border-gray-200 m-auto w-[80vw] md:w-[fit-content] outline-0 rounded-[10px] p-1.5" >
+      <select className="border border-gray-200 -z-1 m-auto w-[80vw] md:w-[fit-content] outline-0 rounded-[10px] p-1.5" >
     <option  value="Madurai">Madurai</option>
     <option value="Chennai">Chennai</option>
     <option value="Coimbatore">Coimbatore</option>
@@ -75,7 +73,7 @@ export default function NavbarDefault() {
        
         <img src={Logo} alt='error' className="h-[50px] w-[50px] rounded-[100%]"/>
        
-        <div className="hidden lg:block">{navList}</div>
+        <div className="hidden w-full lg:block">{navList}</div>
         
         
         <IconButton
