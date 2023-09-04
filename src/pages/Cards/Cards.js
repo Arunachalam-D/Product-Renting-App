@@ -4,7 +4,7 @@ import Iphone from '../../assests/Iphone.png'
 import Furniture from '../../assests/furniture.png'
 import Plants from '../../assests/Plants1.jpeg'
 import Bike from '../../assests/Bike1.avif'
-import Watch from '../../assests/Watch.png'
+import Watch from '../../assests/watch.png'
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "./Cards.css";
