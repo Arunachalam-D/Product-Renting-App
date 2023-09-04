@@ -31,7 +31,6 @@ export default function Index({data1}) {
         "ctypecharger",
         "earphoneandcharger",
         "tablet",
-        "RDMSYS-3038",
         "honorpad",
         "redmipad",
         "lenovopad",
