@@ -1,39 +1,100 @@
 import React,{useState} from 'react'
 import './Login.css'
 import { Formik } from 'formik';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import {NavLink} from 'react-router-dom'
-const SignupSchema = Yup.object().shape({
-   email: Yup.string().email('Invalid email').required('Email Required'),
-  password: Yup.string()
-    .min(8, 'Too Short!')
-    .max(16, 'Too Long!')
-    .required(' Password Required'),
-});
-const SigninSchema = Yup.object().shape({
-    email: Yup.string().email('Invalid email').required('Email Required'),
-    phone:Yup.number().required('Contact no Required')
-    .min(10,'Enter a valid contact no')
-    .max(10,''),
-    name: Yup.string()
-      .min(2, 'Too Short!')
-      .max(50, 'Too Long!')
-      .required('Username Required'),
-    password: Yup.string()
-      .min(8, 'Too Short!')
-      .max(16, 'Too Long!')
-      .required(' Password Required'),
+import axios from 'axios';
 
-  });
+
 function LoginSignin() {
   const [isActive, setIsActive] = useState(false);
 
   const handleInfoItemClick = () => {
     setIsActive(prevState => !prevState);
+ };
+
+ const phoneRegExp =
+ /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const validationSchema = Yup.object().shape({
+ fullname: Yup.string()
+     .required('Firstname is required')
+     .matches(
+         /^([A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*)$/gi,
+         'Name can only contain Latin letters.'
+     ),
+
+ 
+ email: Yup.string()
+     .email('Must be a valid email')
+     .max(255)
+     .required('Email is required'),
+ phone: Yup.string()
+     .matches(phoneRegExp, 'Phone number is not valid')
+     // .typeError("That doesn't look like a phone number")
+     .min(10, 'A phone number must be 10 characters')
+     .max(10)
+     .required('A phone number is requsired'),
+password: Yup.string().required('Password is required'),
+});
+const formik = useFormik({
+ initialValues: {
+     fullname: '',
+     email: '',
+     phone: '',
+     password:'',
+ },
+ validationSchema,
+ validateOnChange: true,
+ // validateOnBlur: false,
+ onSubmit: (data) => {
+    const {data:res} =  axios.post('http://localhost:8000/api/user',{
+   fullname:data.fullname,
+    email:data.email,
+    contactno:data.phone,
+    password:data.password,
+    })
+    .then(()=>{
+      console.log(res.data)
+      //  if(res.message==='User created'){
+      // formik.values.fullname='';
+      // formik.values.email='';
+      // formik.values.phone="";
+      // formik.values.password="";
+      //  setIsActive(true);
+      // }
+    })
+ },
+ 
+});
+const validatationsignupSchema = Yup.object().shape({
+   email: Yup.string()
+     .email('Must be a valid email')
+     .max(255)
+     .required('Email is required'),
+   password: Yup.string()
+    .required(' Password Required'),
+});
+const formiklogin = useFormik({
+   initialValues: {
+       email: '',
+       password:'',
+   },
+   validationSchema:validatationsignupSchema,
+   validateOnChange: true,
+   // validateOnBlur: false,
+   onSubmit: (data) => {
+      // console.log(JSON.stringify(data))
+      const res =  axios.post('http://localhost:8000/api/auth',{
+      email:data.email,
+      password:data.password,
+      })
+      
+      formik.values.email='';
+      formik.values.password="";
+   },
    
-
-  };
-
+  });
   
   return (
 
@@ -64,34 +125,23 @@ function LoginSignin() {
  
              
              <div className={`login form-peice ${!isActive ? 'switched' : ''}`}>
-             <Formik
-       initialValues={{
-         email: '',
-         password:''
-       }}
-       validationSchema={SignupSchema}
-       onSubmit={values => {
-    
-         console.log(values);
-       }}
-     >
-      {({ errors, touched,handleSubmit,values,handleChange }) => (
-                <form className="login-form"  onSubmit={handleSubmit}>
-                   <div  className={`form-group ${errors.email && touched.email ? 
+            
+                <form className="login-form"  onSubmit={formiklogin.handleSubmit}>
+                   <div  className={`form-group ${formiklogin.errors.email && formiklogin.touched.email ? 
                     "hasError" : ''}`}>
                       <label htmlFor="loginemail">Email Adderss</label>
-                      <input type="email"  name="email" id="loginemail" value={values.email} onChange={handleChange}/>
-                      {errors.email && touched.email ? (
-             <span className='text-[#f95959] text-sm'>{errors.email}</span>
+                      <input type="email"  name="email" id="loginemail" value={formiklogin.values.email} onChange={formiklogin.handleChange}/>
+                      {formiklogin.errors.email && formiklogin.touched.email ? (
+             <span className='text-[#f95959] text-sm'>{formiklogin.errors.email}</span>
            ) : null}
                    </div>
  
-                   <div className={`form-group ${errors.password && touched.password ? 
+                   <div className={`form-group ${formiklogin.errors.password && formiklogin.touched.password ? 
                     "hasError" : ''}`}>
                       <label htmlFor="loginPassword">Password</label>
-                      <input type="password" name="password" id="loginPassword" value={values.password} onChange={handleChange} />
-                      {errors.password && touched.password ? (
-             <span className='text-[#f95959] text-sm'>{errors.password}</span>
+                      <input type="password" name="password" id="loginPassword" value={formiklogin.values.password} onChange={formiklogin.handleChange} />
+                      {formiklogin.errors.password && formiklogin.touched.password ? (
+             <span className='text-[#f95959] text-sm'>{formiklogin.errors.password}</span>
            ) : null}
                    </div>
  
@@ -100,14 +150,13 @@ function LoginSignin() {
                       <span className={`switch  underline underline-offset-2 text-gray-400 hover:text-red-400 cursor-pointer ${isActive ? 'active' : ''}`} onClick={handleInfoItemClick} >I'm New</span>
                    </div>
                 </form>
-                )}
-                </Formik>
+                
              </div>
  
  
              
              <div className={`signup form-peice ${!isActive ? "" :'switched'  }`}>
-             <Formik
+             {/* <Formik
        initialValues={{
         email:'',
          phone:'',
@@ -115,48 +164,54 @@ function LoginSignin() {
          password:''
        }}
        validationSchema={SigninSchema}
-       onSubmit={values => {
-       
-         console.log(values);
+       onSubmit ={onSubmit}
+ { values => {
+        console.log(values)
+     const response =  axios.post('http://localhost:8000/api/user',{
+   fullname:values.name,
+    email:values.email,
+    contactno:values.phone,
+    password:values.password,
+ })
        }}
-     >
-     {({ errors, touched,handleSubmit,values,handleChange }) => (
-                <form className="signup-form" onSubmit={handleSubmit}>
+     > */}
+     {/* {({ errors, touched,handleSubmit,values,handleChange }) => ( */}
+                <form className="signup-form" onSubmit={formik.handleSubmit}>
  
-                   <div className={`form-group ${errors.name && touched.name ? 
+                   <div className={`form-group ${formik.errors.fullname && formik.touched.fullname ? 
                     "hasError" : ''}`}>
-                      <label htmlFor="name">Full Name</label>
-                      <input type="text" name="name" id="name" className="name" value={values.name} onChange={handleChange}/>
-                      {errors.name && touched.name ? (
-             <span className='text-[#f95959] text-xs'>{errors.name}</span>
+                      <label htmlFor="fullname">Full Name</label>
+                      <input type="text" name="fullname" id="fullname" className="name" value={formik.values.fullname} onChange={formik.handleChange}/>
+                      {formik.errors.fullname && formik.touched.fullname ? (
+             <span className='text-[#f95959] text-xs'>{formik.errors.fullname}</span>
            ) : null}
                    </div>
  
-                   <div className={`form-group ${errors.email && touched.email ? 
+                   <div className={`form-group ${formik.errors.email && formik.touched.email ? 
                     "hasError" : ''}`}>
                       <label htmlFor="email">Email Adderss</label>
                       <input type="email" name="email" id="email" className="email"
-                      value={values.email} onChange={handleChange}/>
-                     {errors.email && touched.email ? (
-             <span className='text-[#f95959] text-xs'>{errors.email}</span>
+                      value={formik.values.email} onChange={formik.handleChange}/>
+                     {formik.errors.email && formik.touched.email ? (
+             <span className='text-[#f95959] text-xs'>{formik.errors.email}</span>
            ) : null}
                    </div>
  
-                   <div className={`form-group ${errors.phone && touched.phone ? 
+                   <div className={`form-group ${formik.errors.phone && formik.touched.phone ? 
                     "hasError" : ''}`}>
                       <label htmlFor="phone">Phone Number </label>
-                      <input type="text" name="phone" id="phone" value={values.phone} onChange={handleChange}/>
-                      {errors.phone && touched.phone ? (
-             <span className='text-[#f95959] text-xs'>{errors.phone}</span>
+                      <input type="text" name="phone" id="phone" value={formik.values.phone} onChange={formik.handleChange}/>
+                      {formik.errors.phone && formik.touched.phone ? (
+             <span className='text-[#f95959] text-xs'>{formik.errors.phone}</span>
            ) : null}
                    </div>
  
-                   <div className={`form-group ${errors.password && touched.password ? 
+                   <div className={`form-group ${formik.errors.password && formik.touched.password ? 
                     "hasError" : ''}`}>
                       <label htmlFor="password">Password</label>
-                      <input type="password" name="password" id="password" className="pass" value={values.password} onChange={handleChange}/>
-                      {errors.password && touched.password ? (
-             <span className='text-[#f95959] text-xs'>{errors.password}</span>
+                      <input type="password" name="password" id="password" className="pass" value={formik.values.password} onChange={formik.handleChange}/>
+                      {formik.errors.password && formik.touched.password ? (
+             <span className='text-[#f95959] text-xs'>{formik.errors.password}</span>
            ) : null}
                    </div>
  
@@ -167,8 +222,8 @@ function LoginSignin() {
                       <span className={`switch underline underline-offset-2 text-gray-400 hover:text-red-400 cursor-pointer ${isActive ? 'active' : ''}`} onClick={handleInfoItemClick}>I have an account</span>
                    </div>
                 </form>
-                )}
-                </Formik>
+                {/* )}
+                </Formik> */}
              </div>
           </div>
        </div>
