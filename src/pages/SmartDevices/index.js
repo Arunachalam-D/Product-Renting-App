@@ -19,7 +19,7 @@ export default function index() {
         <NavLink to='/echoshow5'><SmartDevices Img={img2} type="Echo-show 5"/></NavLink>
         </div>
         <div>
-        <NavLink to='/noisepulse2max'> <SmartDevices Img={img3} type="Noise Pulse-2 Max"/></NavLink>
+        <NavLink to='/noisepulse2max'><SmartDevices Img={img3} type="Noise Pulse-2 Max"/></NavLink>
         </div>
         <div>
         <NavLink to='/zebsmartcam'><SmartDevices Img={img4} type="Zebronics Smart Cam"/></NavLink>

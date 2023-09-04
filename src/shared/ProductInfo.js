@@ -25,7 +25,11 @@ function ProductInfo({Img1,Img2,Img3,Product,descp,cost,ownerName,email,phone}) 
             },
           },
         }).mount()
-    
+        window.scrollTo({
+          top:0,
+          left:0,
+        
+        })
         return () => {
           slider.destroy()
         }
