@@ -2,6 +2,7 @@ import Layout from "../../Layout/Layout";
 import { useEffect } from "react";
 
 export default function Example() {
+  
   useEffect(()=>{
     window.scrollTo({
       top:0,
