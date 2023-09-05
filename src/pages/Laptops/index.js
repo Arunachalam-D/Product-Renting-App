@@ -13,7 +13,7 @@ export default function index() {
         <Layout>
     <div className='grid grid-cols-2 md:grid-cols-4 gap-4 w-[85vw] m-auto my-[20vh] '>
         <div>
-        <NavLink to='/microsoftsurface'><LapModals Img={img1} type="MicrosoftSurface"/></NavLink>
+        <NavLink to='/microsoftsurface'><LapModals Img={img1} type="Microsoft Surface"/></NavLink>
         </div>
         <div>
         <NavLink to='/hp255'><LapModals Img={img2} type="HP 255"/></NavLink>
